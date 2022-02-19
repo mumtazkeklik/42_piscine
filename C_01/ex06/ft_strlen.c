@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 16:01:22 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/16 16:01:27 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/02/19 15:26:34 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/19 18:09:27 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlen(char *str)
 {
-	int	a;
+	int	i;
 
-	a = 0;
-	while (str[a] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		a++;
+		i++;
 	}
-	return (a);
+	return (i);
 }

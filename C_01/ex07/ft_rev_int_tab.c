@@ -1,27 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 15:44:27 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/19 18:12:57 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/02/19 15:27:53 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/19 15:28:07 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	yaz(char a)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &a, 1);
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void	ft_putstr(char *str)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	while (*str != '\0')
+	int	i;
+
+	i = 0;
+	while ((size / 2) > i)
 	{
-		yaz(*str);
-		str++;
+		ft_swap(&tab[size - (1 + i)], &tab[i]);
+		i++;
 	}
 }
+
+/*int	main(void)
+{
+	int	tab[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+	int	i;
+	int size;
+
+	size = 10;
+	ft_rev_int_tab(tab, 10);
+	i = 0;
+	while (i < size)
+	{
+		printf("%d", tab[i]);
+		i++;
+	}
+	return(0);
+}*/
