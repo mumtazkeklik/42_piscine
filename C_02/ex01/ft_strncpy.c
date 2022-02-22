@@ -2,23 +2,22 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
- 	unsigned int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (i <= n && src[i] != '\0')
+	while ((i < n) && (src[i] != '\0'))
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	while (i != '\0')
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
 	}
 	return (dest);
 }
-
-int		main(void)
+/*int		main(void)
 {
 	char src[] = "Source string.";
 	char dest[] = "Destination string.";
@@ -32,4 +31,4 @@ int		main(void)
 
 	printf("AFTER\n\tsrc: %s\n\tdes: %s\n", src, dest);
 	return (0);
-}
+}*/
