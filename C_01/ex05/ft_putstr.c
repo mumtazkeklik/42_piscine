@@ -12,16 +12,13 @@
 
 #include <unistd.h>
 
-void	yaz(char a)
-{
-	write(1, &a, 1);
-}
-
 void	ft_putstr(char *str)
 {
 	while (*str != '\0')
-	{
-		yaz(*str);
-		str++;
-	}
+		write(1, str++, 1);
 }
+/*int	main(void)
+
+	ft_putstr("ahmet");
+	return (0);
+}*/
