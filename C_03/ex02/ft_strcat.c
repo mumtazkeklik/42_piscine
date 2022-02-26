@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 11:39:10 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 11:39:24 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_strlen(char *str)
 {
 	int	count;
@@ -8,7 +20,7 @@ int	ft_strlen(char *str)
 	return (count);
 }
 
-char	*ft_strcat(char *dest, char src*)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	i;
 

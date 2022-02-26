@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 10:32:38 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 10:32:41 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 
@@ -14,7 +26,7 @@ char	*ft_strupcase(char *str)
 	}
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char	str[20] = "dlahadvcDHSVCLSDVCA";
@@ -23,4 +35,4 @@ int	main(void)
 	new_str = ft_strupcase(str);
 	printf("%s\n", new_str);
 	return (0);
-}
+}*/

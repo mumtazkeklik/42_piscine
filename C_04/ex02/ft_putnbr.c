@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 11:33:21 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/26 11:33:24 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/02/26 15:00:29 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 15:00:33 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i]))
-		i++;
-	return (s1[i] - s2[i]);
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	*s1 = "ahmet";
-	char	*s2 = "ahmet";
 
-	if (!ft_strcmp(s1, s2))
-		printf("%s\n", "true" );
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb < 0)
+	{
+		ft_putchar('-');
+		nb *= -1;
+	}
+	if (nb < 10)
+	{
+		ft_putchar(nb + 48);
+		return ;
+	}
 	else
-		printf("%s\n", "false");
-	return (0);
-}*/
+		ft_putnbr(nb / 10);
+	ft_putnbr(nb % 10);
+}

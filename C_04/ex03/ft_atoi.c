@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 11:33:21 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/26 11:33:24 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/02/26 17:37:09 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 17:37:10 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_atoi(char *str)
 {
+	int	r;
 	int	i;
+	int	sign;
 
+	sign = 1;
 	i = 0;
-	while ((s1[i] != '\0') && (s2[i] != '\0') && (s1[i] == s2[i]))
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
-	return (s1[i] - s2[i]);
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		r = (r * 10) + (str[i] - '0');
+		i++;
+	}
+	return (sign * r);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	*s1 = "ahmet";
-	char	*s2 = "ahmet";
-
-	if (!ft_strcmp(s1, s2))
-		printf("%s\n", "true" );
-	else
-		printf("%s\n", "false");
-	return (0);
-}*/

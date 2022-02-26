@@ -1,45 +1,43 @@
-#include <stdio.h>
-#include <unistd.h>
-
-int	ft_islower(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (1);
-	return (0);
-}
-
-int	ft_isupper(char c)
-{
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
-}
-
-int	ft_issep(char c)
-{
-	return (c == ' ' || c == '+' || c == '-');
-}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 10:55:14 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 10:55:28 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 char	*ft_strcapitalize(char *str)
 {
+	int	c;
 	int	i;
 
+	c = 0;
 	i = 0;
-	while (ft_issep(str[i]))
-		i++;
-	while (str[i])
+	while (str[c] != '\0')
 	{
-		if (ft_islower(str[i]))
-			str[i] -= 32;
-		while (!ft_issep(str[++i]) && str[i])
-			if (ft_isupper(str[i]))
-				str[i] += 32;
-		while (ft_issep(str[i]))
+		if (i == 0 && (str[c] >= 'a' && str[c] <= 'z'))
+		{
+			str[c] -= 'a' - 'A';
 			i++;
+		}
+		else if (i > 0 && (str[c] >= 'A' && str[c] <= 'Z'))
+			str[c] += 'a' - 'A';
+		else if ((str[c] < '0') || (str[c] > '9' && str[c] < 'A'))
+			i = 0;
+		else if ((str[c] > 'Z' && str[c] < 'a') || (str[c] > 'z'))
+			i = 0;
+		else
+			i++;
+		c++;
 	}
 	return (str);
 }
-
+/*
+#include <stdio.h>
 int	main(void)
 {
 	char	str[50] = "ah kEklIk+hjeksSVFdcfsd-ShdcSDFgeg";
@@ -48,4 +46,4 @@ int	main(void)
 	ret = ft_strcapitalize(str);
 	printf("%s\n", ret);
 	return (0);
-}
+}*/

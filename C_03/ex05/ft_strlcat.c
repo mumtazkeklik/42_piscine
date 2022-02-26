@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 11:44:27 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/26 18:32:33 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/02/26 14:40:25 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 14:40:27 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+unsigned int	ft_strlen(char *str)
 {
-	int	i;
+	unsigned int	counter;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	counter = 0;
+	while (*str != '\0')
+	{
+		str++;
+		counter++;
+	}
+	return (counter);
 }
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
 	unsigned int	c;
 
+	if (ft_strlen(dest) >= size)
+		return (ft_strlen(src) + size);
 	i = ft_strlen(dest);
 	c = 0;
-	while (src[c] != '\0' && c < nb)
+	while (src[c] != '\0' && c < (size - 1))
 	{
 		dest[i] = src[c];
 		i++;
 		c++;
 	}
 	dest[i] = '\0';
-	return (dest);
+	return (ft_strlen(dest) + ft_strlen(&src[c]));
 }
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	dest[] = "ahm";
-	char	src[] = "et25";
-	char	*str;
-
-	str = ft_strncat(dest, src, 2);
-	printf("%s\n", str);
-	return (0);
-}*/

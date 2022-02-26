@@ -1,9 +1,19 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 11:36:09 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 17:23:48 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	count;
+	unsigned int	i;
+	unsigned int	count;
 
 	count = 0;
 	i = 0;
@@ -19,7 +29,8 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (s1[i] - s2[i]);
 }
-
+/*
+#include <stdio.h>
 int	main(void)
 {
 	char	s1[10] = "ankara";
@@ -36,4 +47,4 @@ int	main(void)
 	else
 		printf("(%s) > (%s)\n", s1, s2);
 	return (0);
-}
+}*/

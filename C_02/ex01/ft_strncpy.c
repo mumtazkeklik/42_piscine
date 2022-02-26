@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/26 10:22:09 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/26 10:22:22 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
@@ -17,7 +29,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
-/*int		main(void)
+/*
+int		main(void)
 {
 	char src[] = "Source string.";
 	char dest[] = "Destination string.";
