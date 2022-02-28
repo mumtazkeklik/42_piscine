@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 12:19:23 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/28 12:24:02 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_iterative_factorial(int nb)
 {
 	int	c;
@@ -7,11 +19,8 @@ int	ft_iterative_factorial(int nb)
 		return (0);
 	else if (nb <= 1)
 		return (1);
-	while (nb >= 2)
-	{
-		c = c * (nb * (nb - 1));
-		nb -= 2;
-	}
+	while (nb > 0)
+		c *= nb--;
 	return (c);
 }
 /*

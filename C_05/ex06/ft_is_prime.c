@@ -1,15 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 12:22:05 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/28 12:22:07 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_is_prime(int nb)
 {
 	int	c;
 
-	c = (nb - 1);
+	c = 2;
 	if (nb < 2)
 		return (0);
-	while ((nb >= 2) && ((c + 1) > 2))
+	while (c <= (nb / 2))
 	{
 		if (nb % c == 0)
 			return (0);
-		c--;
+		c++;
 	}
 	return (1);
 }
@@ -30,6 +42,6 @@ int		main(void)
 	printf(" 8 = %d (0)\n", ft_is_prime(8));
 	printf(" 9 = %d (0)\n", ft_is_prime(9));
 	printf(" 10 = %d (0)\n", ft_is_prime(10));
-	printf(" 11 = %d (1)\n", ft_is_prime(11));
+	printf(" 11 = %d (1)\n", ft_is_prime(2147483647));
 
 }*/

@@ -1,14 +1,32 @@
 #include <unistd.h>
-void	ft_swap(char *str1, char *str2)
+
+void	ft_putchar(char p)
 {
-	char	temp;
+	write(1, &p, 1);
+}
+
+void	ft_putstr(char	*str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+}
+
+void	ft_swap(char **str1, char **str2)
+{
+	char	*temp;
 
 	temp = *str1;
 	*str1 = *str2;
 	*str2 = temp;
 }
 
-char	*ft_strcmp(char *str1, char *str2)
+int	ft_strcmp(char *str1, char *str2)
 {
 	int	i;
 
@@ -20,22 +38,28 @@ char	*ft_strcmp(char *str1, char *str2)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	c;
-	int	n;
+	int n;
+	int t;
+	int	a;
 
-	n = 0;
-	while (n < argc)
+	a = 1;
+	while(a < (argc - 1))
 	{
-		c = 0;
-		if (ft_strcmp(*argv[c], *argv[c + 1]) < 0)
+		t = 1;
+		while(t < (argc - 1))
 		{
-			ft_swap(*argv[c], *argv[c + 1]);
-			c++;
+			if (ft_strcmp(argv[t], argv[t + 1]) > 0)
+				ft_swap(&argv[t], &argv[t + 1]);
+			t++;
 		}
-		else
-			c++;
-
+		a++;
 	}
-	
+	t = 1;
+	while(t < argc)
+	{
+		ft_putstr(argv[t]);
+		ft_putchar('\n');
+		t++;
+	}
+	return (0);
 }

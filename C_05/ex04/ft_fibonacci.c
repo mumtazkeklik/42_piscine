@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 12:21:19 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/02/28 12:21:21 by mkeklik          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_fibonacci(int index)
 {
 	if (index < 0)
@@ -8,7 +20,7 @@ int	ft_fibonacci(int index)
 		return (1);
 	else if (index > 2)
 	{
-		return (ft_fibonacci(index -2) + ft_fibonacci(index - 1));
+		return (ft_fiboacci(index -2) + ft_fibonacci(index - 1));
 	}
 }
 /*
