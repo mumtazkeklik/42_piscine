@@ -6,7 +6,7 @@
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:20:12 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/28 12:20:14 by mkeklik          ###   ########.fr       */
+/*   Updated: 2022/03/01 10:42:56 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,8 @@ int	ft_iterative_power(int nb, int power)
 		return (0);
 	else if (power == 0)
 		return (1);
-	while (power != 0)
-	{
+	while (--power >= 0)
 		result *= nb;
-		power--;
-	}
 	return (result);
 }
 /*

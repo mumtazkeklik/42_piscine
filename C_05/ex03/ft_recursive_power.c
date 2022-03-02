@@ -6,7 +6,7 @@
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:20:51 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/28 12:20:54 by mkeklik          ###   ########.fr       */
+/*   Updated: 2022/03/01 10:48:12 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@ int	ft_recursive_power(int nb, int power)
 {
 	if (power < 0)
 		return (0);
-	else if (power == 0)
+	else if (power == 0 && nb == 0)
 		return (1);
-	else if (power != 0)
+	if (power > 0)
 		return (nb * ft_recursive_power(nb, (power - 1)));
+	return (1);
 }
 /*
 #include <stdio.h>

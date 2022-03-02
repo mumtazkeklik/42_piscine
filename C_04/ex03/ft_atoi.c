@@ -6,7 +6,7 @@
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 17:37:09 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/26 17:37:10 by mkeklik          ###   ########.fr       */
+/*   Updated: 2022/03/02 14:12:21 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	ft_atoi(char *str)
 
 	sign = 1;
 	i = 0;
+	r = 0;
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
 		i++;
 	while (str[i] == '+' || str[i] == '-')
@@ -33,3 +34,19 @@ int	ft_atoi(char *str)
 	}
 	return (sign * r);
 }
+/*
+#include <stdlib.h>
+#include <stdio.h>
+
+int	main(int ac, char **av)
+{
+	int	mine;
+	int	their;
+
+	if (ac == 2)
+	{
+		mine = ft_atoi(av[1]);
+		their = atoi(av[1]);
+		printf("mine : %d   |   their : %d\n", mine , their);
+	}
+}*/

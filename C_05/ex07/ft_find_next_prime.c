@@ -6,18 +6,18 @@
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:22:25 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/02/28 12:22:30 by mkeklik          ###   ########.fr       */
+/*   Updated: 2022/03/01 12:24:06 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_is_prime(int nb)
-{
+{	
 	int	c;
 
 	c = 2;
 	if (nb < 2)
 		return (0);
-	while (c < (nb / 2))
+	while (c <= (nb / 2))
 	{
 		if (nb % c == 0)
 			return (0);
@@ -28,11 +28,17 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (nb <= 2147483647 && (!ft_is_prime(nb)))
+	if (nb < 2)
+		return (2);
+	while (1)
+	{
+		if (ft_is_prime(nb))
+			break ;
 		nb++;
+	}
 	return (nb);
 }
-/*
+
 #include <stdio.h>
 int		main(void)
 {
@@ -48,6 +54,5 @@ int		main(void)
 	printf(" 8 = %d (11)\n", ft_find_next_prime(8));
 	printf(" 9 = %d (11)\n", ft_find_next_prime(9));
 	printf(" 10 = %d (11)\n", ft_find_next_prime(10));
-	printf(" 11 = %d (11)\n", ft_find_next_prime(11));
-
-}*/
+	printf(" 11 = %d (11)\n", ft_find_next_prime(150000000));
+}

@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/01 19:07:00 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/03/01 19:10:29 by mkeklik          ###   ########.fr       */
+/*   Created: 2022/03/02 10:27:23 by mkeklik           #+#    #+#             */
+/*   Updated: 2022/03/02 10:27:25 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char **argv)
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	c;
+	char	*dest;
+	int		i;
 
-	if (argc == 1)
-		return (0);
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (src[i])
+		i++;
+	dest = (char *)malloc(sizeof(char) * (i + 1));
+	i = 0;
+	while (src[i])
 	{
-		c = 0;
-		while (argv[i][c] != '\0')
-		{
-			write(1, &argv[i][c], 1);
-			c++;
-		}
-		write(1, "\n", 1);
+		dest[i] = src[i];
 		i++;
 	}
+	dest[i] = '\0';
+	return (dest);
 }
+/*
+#include <stdio.h>
+int	main()
+{
+	char	*src = "erebncdrd";
+	char	*dest;
+
+	dest = ft_strdup(src);
+	printf("%s\n", dest);
+	return (0);
+}*/
