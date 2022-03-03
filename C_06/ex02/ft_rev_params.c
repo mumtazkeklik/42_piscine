@@ -6,7 +6,7 @@
 /*   By: mkeklik <mkeklik@42istanbul.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 19:18:40 by mkeklik           #+#    #+#             */
-/*   Updated: 2022/03/01 19:18:44 by mkeklik          ###   ########.fr       */
+/*   Updated: 2022/03/03 16:11:41 by mkeklik          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	int	i;
 	int	c;
 
-	if (argc == 0)
+	if (argc <= 1)
 		return (0);
 	i = argc - 1;
 	while (i > 0)
